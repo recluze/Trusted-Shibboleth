@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>YOUR.GROUP.ID</groupId>
+    <artifactId>YOUR_ARTIFACT_NAME</artifactId>
+    <version>YOUR_EXTENSIONS_VERSION</version>
+    <packaging>jar</packaging>
+
+    <name>EXTENSION_NAME</name>
+    
+    <repositories>
+        <repository>
+            <id>shibboleth.internet2.edu</id>
+            <name>Internet2</name>
+            <layout>default</layout>
+            <url>http://shibboleth.internet2.edu/downloads/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Compile dependencies -->
+
+
+        <!-- Provided dependencies -->
+        <dependency>
+            <groupId>edu.internet2.middleware</groupId>
+            <artifactId>shibboleth-identityprovider</artifactId>
+            <version>SHIBBOLETH_VERSION</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Runtime dependencies -->
+
+        <!-- Test dependencies -->
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <debug>true</debug>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/bin.xml</descriptor>
+                        <descriptor>src/main/assembly/src.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attached</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <links>
+                        <link>http://java.sun.com/j2se/1.5.0/docs/api/</link>
+                    </links>
+                    <quiet>true</quiet>
+                    <author>false</author>
+                    <version>true</version>
+                    <doctitle>${project.name} ${project.version} Java API.</doctitle>
+                    <windowtitle>${project.name} ${project.version} Java API.</windowtitle>
+                    <overview>src/main/java/overview.html</overview>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+    
+    <!-- 
+        You can leave the following information commented out fill it in with information 
+        appropriate for your extension.
+    -->
+    
+    <!-- Project Metadata -->
+    <!--
+    <url>https://opensaml.org/</url>
+    
+    <inceptionYear>2006</inceptionYear>
+        <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <organization>
+        <name>Internet2</name>
+        <url>http://www.internet2.edu/</url>
+    </organization>
+    
+    <issueManagement>
+        <system>JIRA</system>
+        <url>http://bugs.internet2.edu/</url>
+    </issueManagement>
+    
+    <mailingLists>
+        <mailingList>
+            <name>OpenSAML Users</name>
+            <subscribe>https://spaces.internet2.edu/display/OpenSAML/MailingList</subscribe>
+            <unsubscribe>https://spaces.internet2.edu/display/OpenSAML/MailingList</unsubscribe>
+            <post>mace-opensaml-users@internet2.edu</post>
+            <archive>https://mail.internet2.edu/wws/arc/mace-opensaml-users</archive>
+            <otherArchives>
+                <otherArchive>http://groups.google.com/group/opensaml-users</otherArchive>
+            </otherArchives>
+        </mailingList>
+    </mailingLists>
+    
+    <scm>
+        <connection>scm:svn:https://svn.middleware.georgetown.edu/java-opensaml2/</connection>
+        <developerConnection>scm:svn:https://svn.middleware.georgetown.edu/java-opensaml2/</developerConnection>
+        <tag>HEAD</tag>
+        <url>http://svn.middleware.georgetown.edu/view/?root=java-opensaml2</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>lajoie</id>
+            <name>Chad La Joie</name>
+            <organization>SWITCH</organization>
+            <organizationUrl>http://www.switch.ch/</organizationUrl>
+            <roles>
+                <role>developer</role>
+                <role>documentation</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+    -->
+</project>

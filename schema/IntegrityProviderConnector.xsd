@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="urn:serg.edu:shibboleth:2.0:resolver" 
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:resolver="urn:mace:shibboleth:2.0:resolver" 
+        elementFormDefault="qualified">
+
+    <import namespace="urn:mace:shibboleth:2.0:resolver"
+        schemaLocation="classpath:/schema/shibboleth-2.0-attribute-resolver.xsd" />
+
+    <complexType name="IntegrityProviderLookup">
+        <annotation>
+            <documentation>
+               A validation service data connector.
+            </documentation>
+        </annotation>
+        <complexContent>
+            <extension base="resolver:BaseDataConnectorType">
+                <attribute name="vsUrl" type="string" use="required">
+                    <annotation>
+                        <documentation>
+                     Provide the URL (or ip address) of the validation service here. The VS needs to have a daemon running for attestation purposes. (NOT YET IMPLEMENTED)   
+                        </documentation>
+                    </annotation>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>
+
