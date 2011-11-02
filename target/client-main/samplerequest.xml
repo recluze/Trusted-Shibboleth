@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wss:Security>
+<SignChallenge> 
+<wst:Challenge>0102030405010203040501020304050102030405</wst:Challenge>
+</SignChallenge>
+</wss:Security>

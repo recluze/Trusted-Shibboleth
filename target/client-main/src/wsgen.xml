@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project default="deploy" basedir=".">
+
+ <target name="deploy" >
+ 	  <scp todir="user:password@somehost:/home/chuck/">
+ 	    <fileset dir="src_dir"/>
+ 	  </scp>
+  </target>
+</project>
